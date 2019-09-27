@@ -91,3 +91,93 @@ print(os.extsep)
 
 #linesep  获取操作系统的换行符号  window -> \r\n  linux/unix -> \n
 print(repr(os.linesep))
+
+#以下内容都是os.path子模块中的内容
+
+#abspath()  将相对路径转化为绝对路径
+path = './boys'#相对
+result = os.path.abspath(path)
+print(result)
+
+
+#dirname()  获取完整路径当中的目录部分  &  basename()获取完整路径当中的主体部分
+path = '/home/sy/boys'
+result = os.path.dirname(path)
+print(result)
+
+result = os.path.basename(path)
+print(result)
+
+#split() 将一个完整的路径切割成目录部分和主体部分
+path = '/home/sy/boys'
+result = os.path.split(path)
+print(result)
+
+#join() 将2个路径合并成一个
+var1 = '/home/sy'
+var2 = '000.py'
+result = os.path.join(var1,var2)
+print(result)
+
+
+#splitext() 将一个路径切割成文件后缀和其他两个部分,主要用于获取文件的后缀
+path = '/home/sy/000.py'
+result = os.path.splitext(path)
+print(result)
+
+
+#getsize()  获取文件的大小
+path = 'D:\\dev\\workspaces\\python\\pycode\\modules\\os\\main.py'
+result = os.path.getsize(path)
+print(result)
+
+#isfile() 检测是否是文件
+path = 'D:\\dev\\workspaces\\python\\pycode\\modules\\os\\main.py'
+result = os.path.isfile(path)
+print(result)
+
+#isdir()  检测是否是文件夹
+result = os.path.isdir(path)
+print(result)
+
+#islink() 检测是否是链接
+path = '/initrd.img.old'
+result = os.path.islink(path)
+print(result)
+
+#getctime() 获取文件的创建时间 get create time
+#getmtime() 获取文件的修改时间 get modify time
+#getatime() 获取文件的访问时间 get active time
+
+import time
+
+filepath = 'D:\\dev\\workspaces\\python\\pycode\\modules\\os\\main.py'
+
+result = os.path.getctime(filepath)
+print(time.ctime(result))
+
+result = os.path.getmtime(filepath)
+print(time.ctime(result))
+
+result = os.path.getatime(filepath)
+print(time.ctime(result))
+
+
+#exists() 检测某个路径是否真实存在
+result = os.path.exists(filepath)
+print(result)
+
+
+#isabs() 检测一个路径是否是绝对路径
+path = '/boys'
+result = os.path.isabs(path)
+print(result)
+
+#samefile() 检测2个路径是否是同一个文件
+path1 = 'D:\\dev\\workspaces\\python\\pycode\\modules\\os\\main.py'
+path2 = 'D:\\dev\\workspaces\\python\\pycode\\modules\\os\\main.py'
+result = os.path.samefile(path1,path2)
+print(result)
+
+#获取系统环境变量  getenv() 效果
+print(os.environ['PATH'])

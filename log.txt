@@ -1,0 +1,6 @@
+2019-09-27 14:44:45,003 - __main__ - INFO - Start print log
+2019-09-27 14:44:45,005 - __main__ - WARNING - Something maybe fail.
+2019-09-27 14:44:45,006 - __main__ - INFO - Finish
+2019-09-27 14:45:37,218 - __main__ - INFO - Start print log
+2019-09-27 14:45:37,218 - __main__ - WARNING - Something maybe fail.
+2019-09-27 14:45:37,218 - __main__ - INFO - Finish
